@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
 
     public void ActiovationWeapon(int index)
     {
+        animator.SetTrigger("ChangeWeapon");
         if(currentWeapon != null)
         {
             currentWeapon.gameObject.SetActive(false);
