@@ -64,12 +64,16 @@ public class PlayerController : MonoBehaviour
     }
     private void AnimationMove()
     {
-        animator?.SetBool("Run",Mathf.Abs(rb.velocity.x) > 0.2f && isGround);
+        CheckGround();
+        animator.SetBool("IsGround", isGround);
+        if (isGround)
+        {
+            animator?.SetBool("Run", Mathf.Abs(rb.velocity.x) > 0.1f);
+        }
     }
 
     private void UpdateJumping()
     {
-        CheckGround();
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             rb.AddForce(Vector2.up * forceJump, ForceMode2D.Impulse);
