@@ -1,0 +1,1015 @@
+fileFormatVersion: 2
+guid: 469d16020dccdbf459d55a95e78f0d43
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2582163770708133910
+    second: HeroAtlas_0
+  - first:
+      213: -3902156844119037610
+    second: HeroAtlas_1
+  - first:
+      213: 7737695992839274197
+    second: HeroAtlas_2
+  - first:
+      213: 8694946534130005984
+    second: HeroAtlas_3
+  - first:
+      213: 4355701344975352831
+    second: HeroAtlas_4
+  - first:
+      213: 1331374942151567285
+    second: HeroAtlas_5
+  - first:
+      213: -2965752433021159486
+    second: HeroAtlas_6
+  - first:
+      213: 4331111658874138135
+    second: HeroAtlas_7
+  - first:
+      213: 6068783009389833014
+    second: HeroAtlas_8
+  - first:
+      213: -5195186520236551184
+    second: HeroAtlas_9
+  - first:
+      213: 276035341050286571
+    second: HeroAtlas_10
+  - first:
+      213: -1400981939721215049
+    second: HeroAtlas_11
+  - first:
+      213: 5790862792588868378
+    second: HeroAtlas_12
+  - first:
+      213: 3444276105997152744
+    second: HeroAtlas_13
+  - first:
+      213: 937844667560666227
+    second: HeroAtlas_14
+  - first:
+      213: -4674393372164797843
+    second: HeroAtlas_15
+  - first:
+      213: -3570737657704391372
+    second: HeroAtlas_16
+  - first:
+      213: -7098281276921201436
+    second: HeroAtlas_17
+  - first:
+      213: -3523835631155537190
+    second: HeroAtlas_18
+  - first:
+      213: -8989542635860930342
+    second: HeroAtlas_19
+  - first:
+      213: 7358523157710822323
+    second: HeroAtlas_20
+  - first:
+      213: -136596334411795212
+    second: HeroAtlas_21
+  - first:
+      213: -2300559787816272852
+    second: HeroAtlas_22
+  - first:
+      213: -161331472670509695
+    second: HeroAtlas_23
+  - first:
+      213: 4355860639621420468
+    second: HeroAtlas_24
+  - first:
+      213: 298151175388846704
+    second: HeroAtlas_25
+  - first:
+      213: -1889784887364593185
+    second: HeroAtlas_26
+  - first:
+      213: 861970611015648867
+    second: HeroAtlas_27
+  - first:
+      213: -1371177604308021451
+    second: HeroAtlas_28
+  - first:
+      213: 7126278479537776039
+    second: HeroAtlas_29
+  - first:
+      213: -1245121682130928996
+    second: HeroAtlas_30
+  - first:
+      213: 125312561337001829
+    second: HeroAtlas_31
+  - first:
+      213: 3064737435417178353
+    second: HeroAtlas_32
+  - first:
+      213: -7953906629558335489
+    second: HeroAtlas_33
+  - first:
+      213: -5604887179339247584
+    second: HeroAtlas_34
+  - first:
+      213: -3850060197740260179
+    second: HeroAtlas_35
+  - first:
+      213: -3054235099599492322
+    second: HeroAtlas_36
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeroAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 129
+        width: 109
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a3f890aa7b56a4baf9867a68c07c8f
+      internalID: 2582163770708133910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 171
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2199595ac4afaf94fbfc67e953c18457
+      internalID: -3902156844119037610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 135
+        width: 77
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb07584f0586554ba1ab2e30e9af5a2
+      internalID: 7737695992839274197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 180
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6517bf0bb30045e4ebcb178cdc042e22
+      internalID: 8694946534130005984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 101
+        width: 71
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa72da872ad44c4392e1fdf55153b3a
+      internalID: 4355701344975352831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 173
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f58a3e4c47b2ff40ae22266300b1ceb
+      internalID: 1331374942151567285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 133
+        width: 89
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4bbd4ab05d8ec4a9887186629377e6
+      internalID: -2965752433021159486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 132
+        width: 72
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfc446f4b0e2004698470d97e3c3f7f
+      internalID: 4331111658874138135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 148
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de11a9a6f6758a409b6b6ff9e4a698b
+      internalID: 6068783009389833014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 162
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47cbf8a576799b42803bf15011eb60c
+      internalID: -5195186520236551184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 148
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcdca81bccd2d334192d8ecb3ce2178a
+      internalID: 276035341050286571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 95
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4f5d33decd5e7448ecdbe0ed2adb89
+      internalID: -1400981939721215049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 76
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c39725ae858c7448538f5b23a97c30
+      internalID: 5790862792588868378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 105
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45abf3e0b4898b94d91292235a9faea5
+      internalID: 3444276105997152744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 74
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c262f738e54d0f47a39fc6d36c82ad1
+      internalID: 937844667560666227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 97
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9465af146ffeb44788bdd1817b0af93
+      internalID: -4674393372164797843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 79
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080ca36ab6394f1409a859889c7e6bdd
+      internalID: -3570737657704391372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ace0c244b24f343bdb37884fc6fa34
+      internalID: -7098281276921201436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 104
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b097fe16905c47340b08d746716e90e0
+      internalID: -3523835631155537190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 67
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9247ab2cb52b14fad089fa4e18fadd
+      internalID: -8989542635860930342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 98
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4576b6976481d34ea9ca3e63c46706e
+      internalID: 7358523157710822323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 95
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd6d07d82f22cd44bb74a03ce2aa4a7
+      internalID: -136596334411795212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 57
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecf6e735f4927e4381b391fc62e48d9
+      internalID: -2300559787816272852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 74
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8352e9f29fca24c9516549fa87a413
+      internalID: -161331472670509695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 58
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4950fd12ad163db4db160977f4c55ffd
+      internalID: 4355860639621420468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 55
+        width: 97
+        height: 25
+      alignment: 9
+      pivot: {x: 0.27073905, y: 0.5468173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8db3be7482045c4195690426ca93cb4
+      internalID: 298151175388846704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 52
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90650497337377f448fee5cc32c79b37
+      internalID: -1889784887364593185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 52
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66297d5c42912de458d280587ae3d92b
+      internalID: 861970611015648867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 54
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574752d0d417faa438e3c10527360823
+      internalID: -1371177604308021451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 44
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5229050aea4843248aedfb201fe5634d
+      internalID: 7126278479537776039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 45
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a745e04250ee6f498d9f29331bc964c
+      internalID: -1245121682130928996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 38
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314c2c82d4dd8244981946271016e3af
+      internalID: 125312561337001829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 37
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be62b97a09b82304099704d3209a172e
+      internalID: 3064737435417178353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 39
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cf5cd4775619743bcb1914c8290f9e
+      internalID: -7953906629558335489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 39
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074c54969daab4c4f87aa309104e8ad4
+      internalID: -5604887179339247584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 6
+        width: 126
+        height: 43
+      alignment: 9
+      pivot: {x: 0.35137287, y: 0.39112175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bff2a64b2dffc04c82e87fa882913f2
+      internalID: -3850060197740260179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 15
+        width: 43
+        height: 28
+      alignment: 9
+      pivot: {x: 0.26863417, y: 0.33279467}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf08b8e6b604484dbde448f2ac3cd7a
+      internalID: -3054235099599492322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
