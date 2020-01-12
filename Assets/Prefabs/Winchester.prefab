@@ -156,11 +156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae64401b2bc6a094a9fe57f5f5205c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 50
   shootRate: 0.5
-  range: 0.2
-  speedBulletFly: 800
-  maxNumberbullet: 4
+  range: 10
+  speedBulletFly: 1200
+  maxNumberbullet: 6
   firePoint: {fileID: 9057123581458446531}
   prefabBullet: {fileID: 1221502947714807074, guid: 32c54b6099bd8f74d873dc7026ca2887,
     type: 3}
