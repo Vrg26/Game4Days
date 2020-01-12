@@ -7,29 +7,41 @@ public class SpawnerWeapon : MonoBehaviour
     public int index;
     public float timeForChange = 1f;
     public Sprite[] spriteWeapon;
-    SpriteRenderer spriteRenderer;
+    [SerializeField] private ParticleSystem takeEffect;
+    [SerializeField] private GameObject weaponObject;
+    [SerializeField] private SpriteRenderer spriteRendererWeapon;
+    public BoxCollider2D trigger;
+
+    private void Awake()
+    {
+        takeEffect.Stop();
+    }
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        StartCoroutine(RandomWeapon());
+        ActivationRandomWeapon();
     }
 
-    IEnumerator RandomWeapon()
+    public void DeactiveWeapon()
     {
-        while (true)
-        {
+        trigger.enabled = false;
+        takeEffect.Play();
+        weaponObject.SetActive(false);
+        StartCoroutine(ActivationWeapon());
+    }
+
+    IEnumerator ActivationWeapon()
+    {
+        yield return new WaitForSeconds(timeForChange);
+        
+        ActivationRandomWeapon();
+    }
+
+    private void ActivationRandomWeapon()
+    {
+           if(!trigger.enabled) trigger.enabled = true;
+            weaponObject.SetActive(true);
             index = Random.Range(0, spriteWeapon.Length);
-            spriteRenderer.sprite = spriteWeapon[index];
-            yield return new WaitForSeconds(timeForChange);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            collision.GetComponent<PlayerController>().ActiovationWeapon(index);
-        }
+            spriteRendererWeapon.sprite = spriteWeapon[index];
     }
 }

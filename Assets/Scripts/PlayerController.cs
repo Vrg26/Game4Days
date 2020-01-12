@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform parentWeapon;
     private bool isLooksToRight = true;
     private bool isGround;
+    public bool isWeaponActive;
 
     private Rigidbody2D rb;
     private Animator animator;
+
+    private SpawnerWeapon spawner;
 
    
 
@@ -47,6 +50,22 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
+        if(spawner != null && !isWeaponActive)
+        {
+            ActiovationWeapon(spawner.index);
+            spawner.DeactiveWeapon();
+            isWeaponActive = true;
+        }
+        else if(spawner != null && Input.GetKeyDown(KeyCode.E))
+        {
+            ActiovationWeapon(spawner.index);
+            spawner.DeactiveWeapon();
+            isWeaponActive = true;
+        }
+
+
+
         if (Input.GetMouseButtonDown(0) && currentWeapon != null && currentWeapon.isActiveAndEnabled)
         {
             currentWeapon.OpenFire();
@@ -101,5 +120,22 @@ public class PlayerController : MonoBehaviour
         }
         currentWeapon = weapons[index];
         currentWeapon.gameObject.SetActive(true);
+        isWeaponActive = true;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Weapon")
+        {
+            spawner = collision.GetComponent<SpawnerWeapon>();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Weapon")
+        {
+            spawner = null;
+        }
     }
 }
