@@ -10,15 +10,22 @@ public class PlayerController : MonoBehaviour
     public float distance = 0.1f;
     //
 
+    [SerializeField] Transform[] pointsSpawn;
+
+
+    public AnimationCurve damageAnimationCurve;
+
     [SerializeField] private float Speed = 10f;
     [SerializeField] private float forceJump = 100f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform parentWeapon;
+    [SerializeField] private HealthController Health;
 
 
     private bool isLooksToRight = true;
     private bool isGround;
     private bool isHook;
+    public bool isDead = true;
     private bool movement = true;
     public bool isWeaponActive;
 
@@ -48,12 +55,33 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
+        MoveToSpawn();
+        isDead = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        Health = GetComponent<HealthController>();
+        StartCoroutine(Spawn());
+    }
+
+
+    private void MoveToSpawn()
+    {
+        if(pointsSpawn.Length > 0)
+        {
+            transform.position = pointsSpawn[Random.Range(0, pointsSpawn.Length)].position;
+        }
+    }
+
+    IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(1.2f);
+        isDead = false;
     }
 
     private void Update()
     {
+        if (!isDead)
+        {
             if (spawner != null && !isWeaponActive)
             {
                 ActiovationWeapon(spawner.index);
@@ -75,18 +103,22 @@ public class PlayerController : MonoBehaviour
             {
                 currentWeapon.OpenFire();
             }
-            if(movement) UpdateJumping();
+            if (movement) UpdateJumping();
             AnimationMove();
             if (rb.velocity.x > 0.1f && !isLooksToRight) Flip();
             else if (rb.velocity.x < -0.1f && isLooksToRight) Flip();
+        }
     }
 
     private void FixedUpdate()
     {
-        if (movement)
+        if (!isDead)
         {
-            float axis = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
+            if (movement)
+            {
+                float axis = Input.GetAxis("Horizontal");
+                rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
+            }
         }
     }
 
@@ -100,10 +132,8 @@ public class PlayerController : MonoBehaviour
         CheckGround();
         animator.SetBool("IsGround", isGround);
         animator.SetBool("IsHook", isHook && !isGround);
-        if (isGround)
-        {
-            animator?.SetBool("Run", Mathf.Abs(rb.velocity.x) > 0.1f);
-        }
+       animator?.SetBool("Run", Mathf.Abs(rb.velocity.x) > 0.1f && isGround);
+
     }
 
     private void UpdateJumping()
@@ -145,15 +175,27 @@ public class PlayerController : MonoBehaviour
         isWeaponActive = true;
     }
 
-    public void DamageEffect()
+    public void DamageEffect(Vector2 direction)
     {
-        BlockMovmentX(0.1f);
-
+        StartCoroutine(BlockMovmentX(0.3f));
+        rb.velocity = direction * 10;
+        animator.SetTrigger("Damage");
     }
 
+    public void Dead()
+    {
+        animator.SetTrigger("Dead");
+        StartCoroutine(Respawn());
+    }
 
-
-
+    IEnumerator Respawn()
+    {
+        Health.Respawn();
+        yield return new WaitForSeconds(2.1f);
+        MoveToSpawn();
+        yield return new WaitForSeconds(1.2f);
+        isDead = false;
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {

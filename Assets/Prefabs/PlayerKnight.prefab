@@ -612,6 +612,7 @@ GameObject:
   - component: {fileID: 4111950056438745986}
   - component: {fileID: 4111950056438745996}
   - component: {fileID: 4111950056438745997}
+  - component: {fileID: 6376492989563249561}
   - component: {fileID: 4111950056438745987}
   m_Layer: 0
   m_Name: PlayerKnight
@@ -669,18 +670,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0.2
+  pointsSpawn: []
+  damageAnimationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   Speed: 9
   forceJump: 15
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   parentWeapon: {fileID: 4111950056822221321}
+  Health: {fileID: 0}
+  isDead: 0
   isWeaponActive: 0
   rb: {fileID: 0}
   prefabsWeapon:
   - {fileID: 9057123582316950111, guid: e7df592a2849af94bbb1c9fe59f4c230, type: 3}
   - {fileID: 7621992502572038225, guid: 700744292c20e71408418fd0ca313ea6, type: 3}
   - {fileID: 1373908857811143240, guid: 681be5c285cf3ca44b94e5076b524b33, type: 3}
+--- !u!114 &6376492989563249561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111950056438745998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b3135033aad994bbe1cb967f94c47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
 --- !u!70 &4111950056438745987
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -833,7 +856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4111950057168769766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.33, z: 0}
+  m_LocalPosition: {x: 0, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4111950055232648014}

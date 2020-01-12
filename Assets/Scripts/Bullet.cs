@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Damage! " + damage);
+            collision.GetComponent<HealthController>().TakeDamage(damage,transform.position);
             Destroy(gameObject);
         }
     }
