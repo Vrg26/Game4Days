@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   shootRate: 0.5
-  range: 1
+  range: 0.5
   speedBulletFly: 700
   maxNumberbullet: 10
   firePoint: {fileID: 1373908858672300244}
