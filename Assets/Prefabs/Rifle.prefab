@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2861251735356662842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.791, y: 0.071, z: 0}
+  m_LocalPosition: {x: 0.85, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4977251821662275772}
@@ -97,9 +97,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 781904377
-  m_SortingLayer: 1
-  m_SortingOrder: 40
-  m_Sprite: {fileID: -782789399807119266, guid: fe786c8ade7e8b5409c260f42776a56d,
+  m_SortingLayer: 2
+  m_SortingOrder: 90
+  m_Sprite: {fileID: 8972201398676030993, guid: 543bcf94f7f9b794ea30e26752ebefca,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,6 +162,6 @@ MonoBehaviour:
   speedBulletFly: 1000
   maxNumberbullet: 2
   firePoint: {fileID: 428120846238426390}
-  prefabBullet: {fileID: 1221502947714807074, guid: 32c54b6099bd8f74d873dc7026ca2887,
+  prefabBullet: {fileID: 1221502947714807074, guid: fc230034ed7b38e4b8551ca90e453219,
     type: 3}
   isActivWeapon: 0
