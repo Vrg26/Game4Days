@@ -22,7 +22,7 @@ public class SpawnerWeapon : MonoBehaviour
         ActivationRandomWeapon();
     }
 
-    private void DeactiveWeapon()
+    public void DeactiveWeapon()
     {
         trigger.enabled = false;
         takeEffect.Play();
@@ -43,14 +43,5 @@ public class SpawnerWeapon : MonoBehaviour
             weaponObject.SetActive(true);
             index = Random.Range(0, spriteWeapon.Length);
             spriteRendererWeapon.sprite = spriteWeapon[index];
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            collision.GetComponent<PlayerController>().ActiovationWeapon(index);
-            DeactiveWeapon();
-        }
     }
 }

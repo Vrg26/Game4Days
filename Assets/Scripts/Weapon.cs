@@ -19,9 +19,11 @@ public class Weapon : MonoBehaviour
     public bool isActivWeapon;
 
     private Animator animator;
+    private PlayerController player;
 
     private void Start()
     {
+        player = GetComponentInParent<PlayerController>();
         animator = GetComponent<Animator>();
         gameObject.SetActive(false);
     }
@@ -38,6 +40,7 @@ public class Weapon : MonoBehaviour
             if (numberBulletNow > 0) numberBulletNow--;
             else
             {
+                player.isWeaponActive = false;
                 gameObject.SetActive(false);
                 return;
             }
