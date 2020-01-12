@@ -14,16 +14,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float forceJump = 100f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform parentWeapon;
+
+
     private bool isLooksToRight = true;
     private bool isGround;
+    private bool isHook;
+    private bool movement = true;
     public bool isWeaponActive;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Animator animator;
 
     private SpawnerWeapon spawner;
 
-   
+    private Vector2 directionJump;
 
     private List<Weapon> weapons;
     private Weapon currentWeapon;
@@ -50,30 +54,40 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+            if (spawner != null && !isWeaponActive)
+            {
+                ActiovationWeapon(spawner.index);
+                spawner.DeactiveWeapon();
+                isWeaponActive = true;
+            }
 
-        if(spawner != null && !isWeaponActive)
+
+            else if (spawner != null && Input.GetKeyDown(KeyCode.E))
+            {
+                ActiovationWeapon(spawner.index);
+                spawner.DeactiveWeapon();
+                isWeaponActive = true;
+            }
+
+
+
+            if (Input.GetMouseButtonDown(0) && currentWeapon != null && currentWeapon.isActiveAndEnabled)
+            {
+                currentWeapon.OpenFire();
+            }
+            if(movement) UpdateJumping();
+            AnimationMove();
+            if (rb.velocity.x > 0.1f && !isLooksToRight) Flip();
+            else if (rb.velocity.x < -0.1f && isLooksToRight) Flip();
+    }
+
+    private void FixedUpdate()
+    {
+        if (movement)
         {
-            ActiovationWeapon(spawner.index);
-            spawner.DeactiveWeapon();
-            isWeaponActive = true;
+            float axis = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
         }
-        else if(spawner != null && Input.GetKeyDown(KeyCode.E))
-        {
-            ActiovationWeapon(spawner.index);
-            spawner.DeactiveWeapon();
-            isWeaponActive = true;
-        }
-
-
-
-        if (Input.GetMouseButtonDown(0) && currentWeapon != null && currentWeapon.isActiveAndEnabled)
-        {
-            currentWeapon.OpenFire();
-        }
-        UpdateJumping();
-        AnimationMove();
-        if (rb.velocity.x > 0.1f && !isLooksToRight) Flip();
-        else if (rb.velocity.x < -0.1f && isLooksToRight) Flip();
     }
 
     private void Flip()
@@ -85,6 +99,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
         animator.SetBool("IsGround", isGround);
+        animator.SetBool("IsHook", isHook && !isGround);
         if (isGround)
         {
             animator?.SetBool("Run", Mathf.Abs(rb.velocity.x) > 0.1f);
@@ -93,17 +108,24 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateJumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        if (Input.GetKeyDown(KeyCode.Space) && (isGround || isHook))
         {
-            rb.AddForce(Vector2.up * forceJump, ForceMode2D.Impulse);
+            if (isHook) StartCoroutine(BlockMovmentX(0.3f));
+           // rb.velocity = new Vector2(directionJump.x * 10, 10);
+            rb.AddForce((Vector2.up + directionJump *0.5f) * forceJump, ForceMode2D.Impulse);
             animator?.SetTrigger("Jump");
+
         }
     }
-    private void FixedUpdate()
+
+
+    IEnumerator BlockMovmentX(float time)
     {
-        float axis = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
+        movement = false;
+        yield return new WaitForSeconds(time);
+        movement = true;
     }
+   
 
     private void CheckGround()
     {
@@ -122,6 +144,30 @@ public class PlayerController : MonoBehaviour
         currentWeapon.gameObject.SetActive(true);
         isWeaponActive = true;
     }
+
+    public void DamageEffect()
+    {
+        BlockMovmentX(0.1f);
+
+    }
+
+
+
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            directionJump = new Vector2(collision.GetContact(0).normal.x, 0);
+            isHook = directionJump.x != 0;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isHook = false;
+    }
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)

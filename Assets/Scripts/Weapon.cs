@@ -62,7 +62,10 @@ public class Weapon : MonoBehaviour
         isShooting = true;
        // animator?.SetTrigger("Shoot");
         Bullet bullet = Instantiate(prefabBullet, firePoint.position, Quaternion.identity).GetComponent<Bullet>();
-        bullet.Push(transform.right, range, speedBulletFly, damage);
+
+        //speedBulletFly += player.rb.velocity.x;
+
+        bullet.Push(transform.right, range, speedBulletFly , damage);
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
