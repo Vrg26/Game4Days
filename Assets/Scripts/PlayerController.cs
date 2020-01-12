@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float distance = 0.1f;
     //
 
+    public int PlayerNum;
+
     [SerializeField] Transform[] pointsSpawn;
 
 
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            else if (spawner != null && Input.GetKeyDown(KeyCode.E))
+            else if (spawner != null && Input.GetButtonDown("p"+PlayerNum+"TakeWeapon"))
             {
                 ActiovationWeapon(spawner.index);
                 spawner.DeactiveWeapon();
@@ -99,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-            if (Input.GetMouseButtonDown(0) && currentWeapon != null && currentWeapon.isActiveAndEnabled)
+            if (Input.GetButtonDown("p"+PlayerNum+ "Fire") && currentWeapon != null && currentWeapon.isActiveAndEnabled)
             {
                 currentWeapon.OpenFire();
             }
@@ -116,8 +118,13 @@ public class PlayerController : MonoBehaviour
         {
             if (movement)
             {
-                float axis = Input.GetAxis("Horizontal");
-                rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
+                float axis = Input.GetAxis("p"+PlayerNum+"Horizontal");
+                if(Mathf.Abs(axis) > 0.3f)
+                    rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
+                else
+                {
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+                }
             }
         }
     }
@@ -138,7 +145,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateJumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && (isGround || isHook))
+        if (Input.GetButtonDown("p"+PlayerNum+"Jump") && (isGround || isHook))
         {
             if (isHook) StartCoroutine(BlockMovmentX(0.3f));
            // rb.velocity = new Vector2(directionJump.x * 10, 10);

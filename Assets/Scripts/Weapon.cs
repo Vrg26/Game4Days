@@ -37,24 +37,18 @@ public class Weapon : MonoBehaviour
 
         if (!isShooting)
         {
-            if (numberBulletNow > 0) numberBulletNow--;
-            else
-            {
-                player.isWeaponActive = false;
-                gameObject.SetActive(false);
-                return;
-            }
             StartCoroutine(Shoot());
+            numberBulletNow--;
         }
     }
 
     private void OnDisable()
     {
-        numberBulletNow = maxNumberbullet;
+        numberBulletNow = maxNumberbullet - 1;
     }
     private void OnEnable()
     {
-        numberBulletNow = maxNumberbullet;
+        numberBulletNow = maxNumberbullet - 1;
         isShooting = false;
     }
     IEnumerator Shoot()
@@ -66,6 +60,11 @@ public class Weapon : MonoBehaviour
         //speedBulletFly += player.rb.velocity.x;
 
         bullet.Push(transform.right, range, speedBulletFly , damage);
+        if(numberBulletNow <= 0)
+        {
+            player.isWeaponActive = false;
+            gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }

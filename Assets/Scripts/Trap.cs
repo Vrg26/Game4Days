@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Work1");
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("Work");
-            collision.GetComponent<HealthController>().TakeDamage(100f, transform.position);
+            collision.gameObject.GetComponent<HealthController>().TakeDamage(100f, transform.position);
         }
     }
 }
