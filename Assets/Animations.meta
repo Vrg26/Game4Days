@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: e9b890c84fadcba41b37bb44bc303e47
+=======
 guid: c32994e33369a59419657916407c3418
+>>>>>>> remotes/origin/Ivan
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
