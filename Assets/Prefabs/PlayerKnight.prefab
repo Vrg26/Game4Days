@@ -313,7 +313,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 781904377
   m_SortingLayer: 2
-  m_SortingOrder: 50
+  m_SortingOrder: 100
   m_Sprite: {fileID: 8093438438094225879, guid: fe786c8ade7e8b5409c260f42776a56d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -668,14 +668,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648609cfe3c0a12419f263d57aa245f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0.1
+  distance: 0.2
   Speed: 9
-  forceJump: 20
+  forceJump: 15
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   parentWeapon: {fileID: 4111950056822221321}
   isWeaponActive: 0
+  rb: {fileID: 0}
   prefabsWeapon:
   - {fileID: 9057123582316950111, guid: e7df592a2849af94bbb1c9fe59f4c230, type: 3}
   - {fileID: 7621992502572038225, guid: 700744292c20e71408418fd0ca313ea6, type: 3}
