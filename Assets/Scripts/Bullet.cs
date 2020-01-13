@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public bool isRotation;
     public bool isDisk;
     Rigidbody2D rb;
+    PlayerController player;
 
     public void Awake()
     {
@@ -31,6 +32,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            if (player.isKing) player.counterScore(true);
             collision.GetComponent<HealthController>().TakeDamage(damage,transform.position);
             DestroyBullet(0);
             return;
