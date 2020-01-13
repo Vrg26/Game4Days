@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-            if (Input.GetButtonDown("p"+PlayerNum+ "Fire") && currentWeapon != null && currentWeapon.isActiveAndEnabled)
+            if (Input.GetButton("p"+PlayerNum+ "Fire") && currentWeapon != null && currentWeapon.isActiveAndEnabled)
             {
                 currentWeapon.OpenFire();
             }
@@ -184,21 +184,29 @@ public class PlayerController : MonoBehaviour
 
     public void DamageEffect(Vector2 direction)
     {
-        StartCoroutine(BlockMovmentX(0.3f));
-        rb.velocity = direction * 10;
-        animator.SetTrigger("Damage");
+        if (!isDead)
+        {
+            StartCoroutine(BlockMovmentX(0.3f));
+            rb.velocity = direction * 10;
+            animator.SetTrigger("Damage");
+        }
     }
 
     public void Dead()
     {
-        animator.SetTrigger("Dead");
-        StartCoroutine(Respawn());
+        if (!isDead)
+        {
+            animator.SetTrigger("Dead");
+            StartCoroutine(Respawn());
+        }
     }
 
     IEnumerator Respawn()
     {
         Health.Respawn();
-        yield return new WaitForSeconds(2.1f);
+        currentWeapon.gameObject.SetActive(false);
+        isWeaponActive = false;
+        yield return new WaitForSeconds(2.2f);
         MoveToSpawn();
         yield return new WaitForSeconds(1.2f);
         isDead = false;

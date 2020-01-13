@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int maxNumberbullet = 10;
                      private int numberBulletNow;
 
+    [SerializeField] private ParticleSystem shootEffect;
     [SerializeField] private Transform firePoint;
 
 
@@ -53,6 +54,7 @@ public class Weapon : MonoBehaviour
     }
     IEnumerator Shoot()
     {
+        shootEffect.Play();
         isShooting = true;
        // animator?.SetTrigger("Shoot");
         Bullet bullet = Instantiate(prefabBullet, firePoint.position, Quaternion.identity).GetComponent<Bullet>();
