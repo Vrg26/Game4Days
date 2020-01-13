@@ -11,6 +11,8 @@ public class Trap : MonoBehaviour
         {
             Debug.Log("Work");
             collision.gameObject.GetComponent<HealthController>().TakeDamage(100f, transform.position);
+            collision.gameObject.GetComponent<PlayerController>().counterScore(false);
+
         }
     }
 }

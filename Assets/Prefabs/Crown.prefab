@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1496822124594377883}
   - component: {fileID: 8506975760519765754}
   - component: {fileID: 7100400583257707276}
+  - component: {fileID: -5198134631619980122}
   m_Layer: 0
   m_Name: Crown
   m_TagString: Untagged
@@ -47,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.58}
+  m_Offset: {x: 0, y: 0.31}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.2}
+  m_Size: {x: 0.4, y: 0.83}
   m_EdgeRadius: 0
 --- !u!114 &8506975760519765754
 MonoBehaviour:
@@ -93,6 +94,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &-5198134631619980122
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496822124594377860}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1496822125431693102
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,8 +140,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496822125431693102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.578, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.659, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1496822124594377882}
   m_RootOrder: 0
@@ -162,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 2090570655
   m_SortingLayer: 3
   m_SortingOrder: 100
-  m_Sprite: {fileID: -3570737657704391372, guid: 469d16020dccdbf459d55a95e78f0d43,
+  m_Sprite: {fileID: -3148517024773480479, guid: b55ebb03f2b185e4ab8995d448513125,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

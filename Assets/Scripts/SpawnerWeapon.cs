@@ -6,6 +6,7 @@ public class SpawnerWeapon : MonoBehaviour
 {
     public int index;
     private float timeForChange = 1f;
+    [SerializeField] private float maxTime = 10f, minTime = 1f;
     public Sprite[] spriteWeapon;
     [SerializeField] private ParticleSystem takeEffect;
     [SerializeField] private GameObject weaponObject;
@@ -32,7 +33,7 @@ public class SpawnerWeapon : MonoBehaviour
 
     IEnumerator ActivationWeapon()
     {
-        timeForChange = Random.Range(2f, 10f);
+        timeForChange = Random.Range(minTime, maxTime);
         yield return new WaitForSeconds(timeForChange);
         
         ActivationRandomWeapon();
