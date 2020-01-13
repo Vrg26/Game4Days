@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d0f306eb9efdf4c81977d9114d9481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsDestroy:
+  - {fileID: 1687503192739173963, guid: 8d4945dd10acb074f9ab1e5756fcfa2a, type: 3}
+  - {fileID: 1687503192739173963, guid: 8d4945dd10acb074f9ab1e5756fcfa2a, type: 3}
+  isRotation: 0
+  isDisk: 0
 --- !u!1 &5358290068493817439
 GameObject:
   m_ObjectHideFlags: 0
