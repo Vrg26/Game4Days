@@ -61,7 +61,7 @@ public class Weapon : MonoBehaviour
 
         //speedBulletFly += player.rb.velocity.x;
 
-        bullet.Push(transform.right, range, speedBulletFly , damage);
+        bullet.Push(transform.right, range, speedBulletFly , damage,player);
         if(numberBulletNow <= 0)
         {
             player.isWeaponActive = false;

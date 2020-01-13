@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crown : MonoBehaviour
 {
-    public ParticleSystem destroyCrownEffects;
+    public GameObject destroyCrownEffects;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")

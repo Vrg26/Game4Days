@@ -15,8 +15,9 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    public void Push(Vector2 direction, float lifeTime, float force, float damage)
+    public void Push(Vector2 direction, float lifeTime, float force, float damage, PlayerController player)
     {
+        this.player = player;
         rb.AddForce(direction * force, ForceMode2D.Force);
         this.damage = damage;
         if(isRotation)rb.AddTorque(1000f);
@@ -32,8 +33,14 @@ public class Bullet : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            if (player.isKing) player.counterScore(true);
-            collision.GetComponent<HealthController>().TakeDamage(damage,transform.position);
+            if (player.isKing)
+            {
+                collision.GetComponent<HealthController>().TakeDamage(damage, transform.position, player);
+            }
+            else
+            {
+                collision.GetComponent<HealthController>().TakeDamage(damage, transform.position);
+            }
             DestroyBullet(0);
             return;
         }

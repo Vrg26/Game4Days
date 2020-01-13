@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1496822124594377882}
   - component: {fileID: 1496822124594377883}
   - component: {fileID: 8506975760519765754}
+  - component: {fileID: 7100400583257707276}
   m_Layer: 0
   m_Name: Crown
   m_TagString: Untagged
@@ -71,7 +72,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe98be4c4a5c1c45bf878a891d7995a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyCrownEffects: {fileID: 0}
+  destroyCrownEffects: {fileID: 7996384954103382032, guid: 879d21804b7f19f45b5907322a1f7ba7,
+    type: 3}
+--- !u!95 &7100400583257707276
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496822124594377860}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4dbee8b437be7ab4789b5fc156898a27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1496822125431693102
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,9 +159,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2090570655
+  m_SortingLayer: 3
+  m_SortingOrder: 100
   m_Sprite: {fileID: -3570737657704391372, guid: 469d16020dccdbf459d55a95e78f0d43,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

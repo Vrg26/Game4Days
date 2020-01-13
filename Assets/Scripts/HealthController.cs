@@ -17,7 +17,7 @@ public class HealthController : MonoBehaviour
     {
         hp = maxHp;
     }
-    public void TakeDamage(float damage , Vector3 posBullet)
+    public void TakeDamage(float damage , Vector3 posBullet, PlayerController OtherPlayer = null)
     {
         Vector2 direction = new Vector2(transform.position.x - posBullet.x, 0.5f);
         if (!player.isDead)
@@ -25,6 +25,7 @@ public class HealthController : MonoBehaviour
             hp -= damage;
             if (hp <= 0)
             {
+                if (OtherPlayer != null) OtherPlayer.counterScore(true);
                 player.Dead();
                 hp = maxHp; // delete in playerController
                 player.isDead = true;

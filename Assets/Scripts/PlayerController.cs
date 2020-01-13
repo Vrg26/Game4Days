@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        //scoreText.text = score.ToString();
+        scoreText.text = score.ToString();
         MoveToSpawn();
         isDead = true;
         rb = GetComponent<Rigidbody2D>();
@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("Dead");
             StartCoroutine(Respawn());
+            if (isKing) LoseCrown();
         }
     }
 
