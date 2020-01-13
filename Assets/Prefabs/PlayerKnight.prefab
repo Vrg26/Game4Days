@@ -670,7 +670,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0.2
-  pointsSpawn: []
+  PlayerNum: 1
+  pointsSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   damageAnimationCurve:
     serializedVersion: 2
     m_Curve: []

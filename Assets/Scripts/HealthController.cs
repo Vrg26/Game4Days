@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthController : MonoBehaviour
 {
     [SerializeField] private float maxHp;
-    private float hp;
+    public float hp;
     private PlayerController player;
 
     private void Start()
@@ -20,16 +20,19 @@ public class HealthController : MonoBehaviour
     public void TakeDamage(float damage , Vector3 posBullet)
     {
         Vector2 direction = new Vector2(transform.position.x - posBullet.x, 0.5f);
-        hp -= damage;
-        Debug.Log(hp);
-        if(hp <= 0)
+        if (!player.isDead)
         {
-            player.Dead();
-            player.isDead = true;
-        }
-        else
-        {
-            player.DamageEffect(direction);
+            hp -= damage;
+            if (hp <= 0)
+            {
+                player.Dead();
+                hp = maxHp; // delete in playerController
+                player.isDead = true;
+            }
+            else
+            {
+                player.DamageEffect(direction);
+            }
         }
     }
 }

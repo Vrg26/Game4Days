@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnerWeapon : MonoBehaviour
 {
     public int index;
-    public float timeForChange = 1f;
+    private float timeForChange = 1f;
     public Sprite[] spriteWeapon;
     [SerializeField] private ParticleSystem takeEffect;
     [SerializeField] private GameObject weaponObject;
@@ -32,6 +32,7 @@ public class SpawnerWeapon : MonoBehaviour
 
     IEnumerator ActivationWeapon()
     {
+        timeForChange = Random.Range(2f, 10f);
         yield return new WaitForSeconds(timeForChange);
         
         ActivationRandomWeapon();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -9,6 +10,10 @@ public class PlayerController : MonoBehaviour
     //Delete
     public float distance = 0.1f;
     //
+
+
+    public int score;
+    public Text scoreText;
 
     public int PlayerNum;
 
@@ -22,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform parentWeapon;
     [SerializeField] private HealthController Health;
+    [SerializeField] private GameObject crown;
 
 
     private bool isLooksToRight = true;
@@ -30,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public bool isDead = true;
     private bool movement = true;
     public bool isWeaponActive;
+
+    public bool isKing;
 
     public Rigidbody2D rb;
     private Animator animator;
@@ -41,22 +49,25 @@ public class PlayerController : MonoBehaviour
     private List<Weapon> weapons;
     private Weapon currentWeapon;
 
-    
+
 
     [SerializeField] GameObject[] prefabsWeapon;
+    [SerializeField] GameObject CronwPlayer;
 
     private void Awake()
     {
+        CronwPlayer.SetActive(false);
         weapons = new List<Weapon>();
         for (int i = 0; i < prefabsWeapon.Length; i++)
         {
             weapons.Add(Instantiate(prefabsWeapon[i], parentWeapon.position, Quaternion.identity, parentWeapon).GetComponent<Weapon>());
         }
         currentWeapon = weapons[1];
-        
+
     }
     private void Start()
     {
+        //scoreText.text = score.ToString();
         MoveToSpawn();
         isDead = true;
         rb = GetComponent<Rigidbody2D>();
@@ -65,10 +76,15 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Spawn());
     }
 
+    public void counterScore(bool plus)
+    {
+        score += plus ? 1 : -1;
+        scoreText.text = score.ToString();
+    }
 
     private void MoveToSpawn()
     {
-        if(pointsSpawn.Length > 0)
+        if (pointsSpawn.Length > 0)
         {
             transform.position = pointsSpawn[Random.Range(0, pointsSpawn.Length)].position;
         }
@@ -92,7 +108,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            else if (spawner != null && Input.GetButtonDown("p"+PlayerNum+"TakeWeapon"))
+            else if (spawner != null && Input.GetButtonDown("p" + PlayerNum + "TakeWeapon"))
             {
                 ActiovationWeapon(spawner.index);
                 spawner.DeactiveWeapon();
@@ -101,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-            if (Input.GetButtonDown("p"+PlayerNum+ "Fire") && currentWeapon != null && currentWeapon.isActiveAndEnabled)
+            if (Input.GetButton("p" + PlayerNum + "Fire") && currentWeapon != null && currentWeapon.isActiveAndEnabled)
             {
                 currentWeapon.OpenFire();
             }
@@ -118,8 +134,8 @@ public class PlayerController : MonoBehaviour
         {
             if (movement)
             {
-                float axis = Input.GetAxis("p"+PlayerNum+"Horizontal");
-                if(Mathf.Abs(axis) > 0.3f)
+                float axis = Input.GetAxis("p" + PlayerNum + "Horizontal");
+                if (Mathf.Abs(axis) > 0.3f)
                     rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
                 else
                 {
@@ -139,17 +155,17 @@ public class PlayerController : MonoBehaviour
         CheckGround();
         animator.SetBool("IsGround", isGround);
         animator.SetBool("IsHook", isHook && !isGround);
-       animator?.SetBool("Run", Mathf.Abs(rb.velocity.x) > 0.1f && isGround);
+        animator?.SetBool("Run", Mathf.Abs(rb.velocity.x) > 0.1f && isGround);
 
     }
 
     private void UpdateJumping()
     {
-        if (Input.GetButtonDown("p"+PlayerNum+"Jump") && (isGround || isHook))
+        if (Input.GetButtonDown("p" + PlayerNum + "Jump") && (isGround || isHook))
         {
             if (isHook) StartCoroutine(BlockMovmentX(0.3f));
-           // rb.velocity = new Vector2(directionJump.x * 10, 10);
-            rb.AddForce((Vector2.up + directionJump *0.5f) * forceJump, ForceMode2D.Impulse);
+            // rb.velocity = new Vector2(directionJump.x * 10, 10);
+            rb.AddForce((Vector2.up + directionJump * 0.5f) * forceJump, ForceMode2D.Impulse);
             animator?.SetTrigger("Jump");
 
         }
@@ -162,7 +178,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(time);
         movement = true;
     }
-   
+
 
     private void CheckGround()
     {
@@ -173,7 +189,7 @@ public class PlayerController : MonoBehaviour
     public void ActiovationWeapon(int index)
     {
         animator.SetTrigger("ChangeWeapon");
-        if(currentWeapon != null)
+        if (currentWeapon != null)
         {
             currentWeapon.gameObject.SetActive(false);
         }
@@ -184,21 +200,42 @@ public class PlayerController : MonoBehaviour
 
     public void DamageEffect(Vector2 direction)
     {
-        StartCoroutine(BlockMovmentX(0.3f));
-        rb.velocity = direction * 10;
-        animator.SetTrigger("Damage");
+        if (!isDead)
+        {
+            StartCoroutine(BlockMovmentX(0.3f));
+            rb.velocity = direction * 10;
+            animator.SetTrigger("Damage");
+        }
     }
 
     public void Dead()
     {
-        animator.SetTrigger("Dead");
-        StartCoroutine(Respawn());
+        if (!isDead)
+        {
+            animator.SetTrigger("Dead");
+            StartCoroutine(Respawn());
+        }
+    }
+
+
+    public void BecomeKing()
+    {
+        isKing = true;
+        CronwPlayer.SetActive(true);
+    }
+    public void LoseCrown()
+    {
+        Instantiate(crown, transform.position, Quaternion.identity);
+        CronwPlayer.SetActive(false);
+        isKing = false;
     }
 
     IEnumerator Respawn()
     {
         Health.Respawn();
-        yield return new WaitForSeconds(2.1f);
+        currentWeapon.gameObject.SetActive(false);
+        isWeaponActive = false;
+        yield return new WaitForSeconds(2.2f);
         MoveToSpawn();
         yield return new WaitForSeconds(1.2f);
         isDead = false;
