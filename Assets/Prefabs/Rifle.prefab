@@ -9780,7 +9780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae64401b2bc6a094a9fe57f5f5205c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 15
   shootRate: 0.1
   range: 10
   speedBulletFly: 1500

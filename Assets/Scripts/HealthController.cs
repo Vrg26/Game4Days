@@ -6,16 +6,22 @@ public class HealthController : MonoBehaviour
 {
     [SerializeField] private float maxHp;
     public float hp;
+    public Transform lineHealth;
     private PlayerController player;
 
     private void Start()
     {
         hp = maxHp;
+        lineHealth.localScale = new Vector3(0.5f, 1, 1);
         player = GetComponent<PlayerController>();
     }
     public void Respawn()
     {
         hp = maxHp;
+    }
+    private void Update()
+    {
+        lineHealth.localScale = new Vector3(hp / 100f, 1, 1);
     }
     public void TakeDamage(float damage , Vector3 posBullet, PlayerController OtherPlayer = null)
     {
