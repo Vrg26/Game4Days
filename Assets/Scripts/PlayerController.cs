@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IPunObservable
 {
 
     //Delete
@@ -293,5 +293,10 @@ public class PlayerController : MonoBehaviour
         {
             spawner = null;
         }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new System.NotImplementedException();
     }
 }
