@@ -12,7 +12,8 @@ public class HealthController : MonoBehaviour
     private void Start()
     {
         hp = maxHp;
-        lineHealth.localScale = new Vector3(0.5f, 1, 1);
+        if(lineHealth != null)
+            lineHealth.localScale = new Vector3(0.5f, 1, 1);
         player = GetComponent<PlayerController>();
     }
     public void Respawn()
@@ -21,7 +22,8 @@ public class HealthController : MonoBehaviour
     }
     private void Update()
     {
-        lineHealth.localScale = new Vector3(hp / 100f, 1, 1);
+        if (lineHealth != null)
+            lineHealth.localScale = new Vector3(hp / 100f, 1, 1);
     }
     public void TakeDamage(float damage , Vector3 posBullet, PlayerController OtherPlayer = null)
     {

@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -54,6 +57,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject[] prefabsWeapon;
     [SerializeField] GameObject CronwPlayer;
 
+
+    PhotonView photonView;
+
     private void Awake()
     {
         CronwPlayer.SetActive(false);
@@ -67,19 +73,22 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        scoreText.text = score.ToString();
+        if(scoreText != null)
+            scoreText.text =  score.ToString();
         MoveToSpawn();
         isDead = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         Health = GetComponent<HealthController>();
         StartCoroutine(Spawn());
+        photonView = GetComponent<PhotonView>();
     }
 
     public void counterScore(bool plus)
     {
         score += plus ? 1 : -1;
-        scoreText.text = score.ToString();
+        if(scoreText != null)
+            scoreText.text = score.ToString();
     }
 
     private void MoveToSpawn()
@@ -98,48 +107,54 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead)
+        if (photonView.IsMine)
         {
-            if (spawner != null && !isWeaponActive)
+            if (!isDead)
             {
-                ActiovationWeapon(spawner.index);
-                spawner.DeactiveWeapon();
-                isWeaponActive = true;
+                if (spawner != null && !isWeaponActive)
+                {
+                    ActiovationWeapon(spawner.index);
+                    spawner.DeactiveWeapon();
+                    isWeaponActive = true;
+                }
+
+
+                else if (spawner != null && Input.GetButtonDown("p" + PlayerNum + "TakeWeapon"))
+                {
+                    ActiovationWeapon(spawner.index);
+                    spawner.DeactiveWeapon();
+                    isWeaponActive = true;
+                }
+
+
+
+                if (Input.GetButton("p" + PlayerNum + "Fire") && currentWeapon != null && currentWeapon.isActiveAndEnabled)
+                {
+                    currentWeapon.OpenFire();
+                }
+                if (movement) UpdateJumping();
+                AnimationMove();
+                if (rb.velocity.x > 0.1f && !isLooksToRight) Flip();
+                else if (rb.velocity.x < -0.1f && isLooksToRight) Flip();
             }
-
-
-            else if (spawner != null && Input.GetButtonDown("p" + PlayerNum + "TakeWeapon"))
-            {
-                ActiovationWeapon(spawner.index);
-                spawner.DeactiveWeapon();
-                isWeaponActive = true;
-            }
-
-
-
-            if (Input.GetButton("p" + PlayerNum + "Fire") && currentWeapon != null && currentWeapon.isActiveAndEnabled)
-            {
-                currentWeapon.OpenFire();
-            }
-            if (movement) UpdateJumping();
-            AnimationMove();
-            if (rb.velocity.x > 0.1f && !isLooksToRight) Flip();
-            else if (rb.velocity.x < -0.1f && isLooksToRight) Flip();
         }
     }
 
     private void FixedUpdate()
     {
-        if (!isDead)
+        if (photonView.IsMine)
         {
-            if (movement)
+            if (!isDead)
             {
-                float axis = Input.GetAxis("p" + PlayerNum + "Horizontal");
-                if (Mathf.Abs(axis) > 0.3f)
-                    rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
-                else
+                if (movement)
                 {
-                    rb.velocity = new Vector2(0, rb.velocity.y);
+                    float axis = Input.GetAxis("p" + PlayerNum + "Horizontal");
+                    if (Mathf.Abs(axis) > 0.3f)
+                        rb.velocity = new Vector2(axis * Speed, rb.velocity.y);
+                    else
+                    {
+                        rb.velocity = new Vector2(0, rb.velocity.y);
+                    }
                 }
             }
         }
