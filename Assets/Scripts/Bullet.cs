@@ -33,13 +33,21 @@ public class Bullet : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            PlayerController otherPlayer = collision.GetComponent<PlayerController>();
             if (player.isKing)
             {
-                collision.GetComponent<HealthController>().TakeDamage(damage, transform.position, player);
+                
+                if (player.PlayerNum != otherPlayer.PlayerNum)
+                {
+                    collision.GetComponent<HealthController>().TakeDamage(damage, transform.position, player);
+                }
             }
             else
             {
-                collision.GetComponent<HealthController>().TakeDamage(damage, transform.position);
+                if (player.PlayerNum != otherPlayer.PlayerNum)
+                {
+                    collision.GetComponent<HealthController>().TakeDamage(damage, transform.position);
+                }
             }
             DestroyBullet(0);
             return;

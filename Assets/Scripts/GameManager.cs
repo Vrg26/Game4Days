@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         EndGameMenu.SetActive(false);
+        Cursor.visible = false;
         Time.timeScale = 1;
     }
 
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     }
     public void EndGame()
     {
+        Cursor.visible =true;
         EndGameMenu.SetActive(true);
         Time.timeScale = 0.1f;
         for (int i = 0; i < players.Length; i++)

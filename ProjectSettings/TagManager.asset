@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Player
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Hero
     uniqueID: 781904377
+    locked: 0
+  - name: Hero2
+    uniqueID: 2020702493
     locked: 0
   - name: Frontground
     uniqueID: 2090570655

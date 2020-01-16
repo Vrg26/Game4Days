@@ -242,6 +242,14 @@ public class PlayerController : MonoBehaviour
         isDead = false;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            directionJump = new Vector2(collision.GetContact(0).normal.x, 0);
+            isHook = directionJump.x != 0;
+        }
+    }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall")
